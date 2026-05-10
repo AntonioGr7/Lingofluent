@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lingofluent"
+version = "0.1.0"
+description = "Telegram bot that bridges voice messages to a local CrispASR speech-to-text backend."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "Antonio Grimaldi" }]
+keywords = ["telegram", "bot", "asr", "speech-to-text", "crispasr"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "Topic :: Communications :: Chat",
+]
+dependencies = [
+    "python-telegram-bot>=22.0,<23.0",
+    "python-dotenv>=1.0",
+    "aiohttp>=3.13",
+    "pydub>=0.25",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[project.scripts]
+lingofluent = "lingofluent.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/antonio-grimaldi/lingofluent"
+Issues = "https://github.com/antonio-grimaldi/lingofluent/issues"
+
+[tool.setuptools.packages.find]
+include = ["lingofluent*"]
+exclude = ["tests*"]

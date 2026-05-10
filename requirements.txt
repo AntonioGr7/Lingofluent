@@ -1,0 +1,4 @@
+python-telegram-bot==22.7
+python-dotenv==1.2.2
+aiohttp==3.13.5
+pydub==0.25.1
